@@ -33,6 +33,8 @@
                                 <li><a class="dropdown-item" href="#">Something else here</a></li>
                             </ul>
                         </li>
+                    </ul>
+                    <ul>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-body" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 ADMIN
@@ -47,6 +49,7 @@
                                 </form>
                             </ul>
                         </li>
+                    </ul>
                     @endif
                     @if(Auth()->user()->role_id === Helper::getCustomerRoleId())
                     <li class="nav-item dropdown">
