@@ -34,10 +34,10 @@
                             </ul>
                         </li>
                     </ul>
-                    <ul>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-body" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                ADMIN
+                                MANAGER
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="#">Action</a></li>
@@ -52,31 +52,37 @@
                     </ul>
                     @endif
                     @if(Auth()->user()->role_id === Helper::getCustomerRoleId())
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-body" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Categories
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-body" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            USER
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <form action="{{route('logout')}}" method="post">
-                                @csrf
-                                <li><button type="submit" class="dropdown-item fw-bold">Logout</button></li>
-                            </form>
-                        </ul>
-                    </li>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-body" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Categories
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Wireless Keyboard</a></li>
+                                <li><a class="dropdown-item" href="#">Wired Keyboard</a></li>
+                                <li><a class="dropdown-item" href="#">Ergonomic Keyboard</a></li>
+                                <li><a class="dropdown-item" href="#">60 - 69 Mechanical Keyboard</a></li>
+                                <li><a class="dropdown-item" href="#">70 - 89 Mechanical Keyboard</a></li>
+                                <li><a class="dropdown-item" href="#">Full size Mechanical Keyboard</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-body" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                {{Auth()->user()->username}}
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">My Cart</a></li>
+                                <li><a class="dropdown-item" href="#">Transaction History</a></li>
+                                <li><a class="dropdown-item" href="#">Change Password</a></li>
+                                <form action="{{route('logout')}}" method="post">
+                                    @csrf
+                                    <li><button type="submit" class="dropdown-item fw-bold">Logout</button></li>
+                                </form>
+                            </ul>
+                        </li>
+                    </ul>
                     @endif
                     
                 @else
@@ -90,21 +96,6 @@
                     
                 </ul>
                 @endif
-                
-
-                    
-{{--                     
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Register</a>
-                    </li> --}}
-                    
-                </ul>
-                {{-- @else --}}
-                
-                {{-- @endauth --}}
             </div>
             <!-- <div id="clock" style="margin-right: 5em;"></div> -->
         </div>
