@@ -58,12 +58,14 @@
                                 Categories
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Wireless Keyboard</a></li>
-                                <li><a class="dropdown-item" href="#">Wired Keyboard</a></li>
+                                @foreach ($categories as $category)
+                                <li><a class="dropdown-item" href="#">{{$category->name}}</a></li>
+                                @endforeach
+                                {{-- <li><a class="dropdown-item" href="#">Wired Keyboard</a></li>
                                 <li><a class="dropdown-item" href="#">Ergonomic Keyboard</a></li>
                                 <li><a class="dropdown-item" href="#">60 - 69 Mechanical Keyboard</a></li>
                                 <li><a class="dropdown-item" href="#">70 - 89 Mechanical Keyboard</a></li>
-                                <li><a class="dropdown-item" href="#">Full size Mechanical Keyboard</a></li>
+                                <li><a class="dropdown-item" href="#">Full size Mechanical Keyboard</a></li> --}}
                             </ul>
                         </li>
                     </ul>

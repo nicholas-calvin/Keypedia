@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
@@ -16,10 +17,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 //ALL USER
-Route::redirect('/', '/home')->name('home');
-Route::get('/home', function () {
-    return view('/home');
-});
+Route::redirect('/', '/home');
+Route::get('/home', [HomeController::class, 'showHome'])->name('home');
 
 //GUEST ONLY
 Route::middleware('guest')->group(function(){
