@@ -73,7 +73,7 @@
                             <label for="confirmPassword">Address</label>
                         </div>
                         <div class="col-6">
-                            <textarea name="address" id="address" rows="5" class="form-control rounded-3 w-75 @error('address') is-invalid @enderror"></textarea required  value="{{old('address')}}">
+                            <textarea name="address" id="address" rows="5" class="form-control rounded-3 w-75 @error('address') is-invalid @enderror"></textarea required value="{{old('address')}}">
                             @error('address')
                             <div class="invalid-feedback">
                                 {{$message}}
@@ -86,9 +86,9 @@
                             <label for="confirmPassword">Gender</label>
                         </div>
                         <div class="col-6">
-                            <input class="form-check-input @error('gender') is-invalid @enderror" type="radio" name="gender" id="male" value="male" required  value="{{old('gender')}}">
+                            <input class="form-check-input @error('gender') is-invalid @enderror" type="radio" name="gender" id="male" value="male" required value="{{old('gender')}}">
                             <label class="form-check-label" for="male">Male</label>
-                            <input class="form-check-input @error('gender') is-invalid @enderror" type="radio" name="gender" id="female" value="female" required  value="{{old('gender')}}">
+                            <input class="form-check-input @error('gender') is-invalid @enderror" type="radio" name="gender" id="female" value="female" required value="{{old('gender')}}">
                             <label class="form-check-label" for="female">Female</label>
                         </div>
                     </div>
@@ -97,7 +97,7 @@
                             <label for="confirmPassword">Date of Birth</label>
                         </div>
                         <div class="col-6">
-                            <input type="date" class="form-control datepicker rounded-3 w-75 @error('dob') is-invalid @enderror" name="dob" id="dob"  required  value="{{old('dob')}}">
+                            <input type="date" class="form-control datepicker rounded-3 w-75 @error('dob') is-invalid @enderror" name="dob" id="dob"  required value="{{old('dob')}}">
                             @error('dob')
                             <div class="invalid-feedback">
                                 {{$message}}

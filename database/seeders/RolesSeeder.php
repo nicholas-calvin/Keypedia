@@ -3,8 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
-class DatabaseSeeder extends Seeder
+class RolesSeeder extends Seeder
 {
     /**
      * Seed the application's database.
@@ -14,9 +15,14 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-        $this->call([
-            RolesSeeder::class,
-            UsersSeeder::class,
+        DB::table('roles')->insert([
+            [
+                'name' => 'Admin'
+            ],
+            [
+                'name' => 'Customer'
+            ]
         ]);
+        
     }
 }

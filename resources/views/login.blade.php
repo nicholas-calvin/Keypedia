@@ -1,6 +1,18 @@
 @extends('layout')
 
 @section('content')
+    @if(session()->has('success'))  
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{session('success')}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
+    @if(session()->has('loginError'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{session('loginError')}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
     <div class="container-md" style="padding: 2em;">
         <div class="login-form" style="background-color: #b4a8cb;">
 
@@ -9,12 +21,12 @@
             </div>
 
             <div style="background-color: #baaed1; margin-left: 0; margin-right: 0; padding: 2em;">
-                <div class="kanan">
+                {{-- <div class="kanan">
                     <button>Manager</button>
                 </div>
                 <div class="kiri">
                     <button>User</button>
-                </div>
+                </div> --}}
                 @if(session()->has('success'))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
                         {{session('success')}}
@@ -22,6 +34,7 @@
                     </div>
                 @endif
                 <form action="/login" method="post">
+                    @csrf
                     <div class="row justify-content-center" style="margin-bottom: 1em;">
                         <div class="col-4 text-end">
                             <label for="email">E-Mail Adress</label>
@@ -41,8 +54,8 @@
                     <div class="row justify-content-center">
                         <div class="col-4 text-end"></div>
                         <div class="col-6" style="margin-top: 1em;">
-                            <input class="form-check-input" type="checkbox" id="rememberMe">
-                            <label class="form-check-label" for="rememberMe">
+                            <input class="form-check-input" type="checkbox" id="remember_me" value="remember_me" name="remember_me">
+                            <label class="form-check-label" for="remember_me">
                                 Remember Me
                             </label>
                         </div>
@@ -50,7 +63,7 @@
                     <div class="row justify-content-center">
                         <div class="col-4 text-end"></div>
                         <div class="col-6" style="margin-top: 1em;">
-                            <button type="login" class="btn btn-primary">Login</button>
+                            <button type="submit" class="btn btn-primary">Login</button>
                         </div>
                     </div>
                 </form>

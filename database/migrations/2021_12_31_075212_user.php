@@ -18,7 +18,10 @@ class User extends Migration
             $table->string('username');
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('address');
+            $table->string('gender');
             $table->date('dob');
+            $table->foreignId('role_id')->constrained('roles');
             $table->rememberToken();
             $table->timestamps();
         });

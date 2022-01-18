@@ -17,10 +17,10 @@
                     <img src="{{asset('asset/image/1.jpg')}}" alt="Could not load image" srcset="" style="width: 380px;">
                 </div>
             </a>
-            </div>
+        </div>
     </div>
-@auth
+{{-- @auth
 <h1>Welcome user!</h1>
-@else
-@endauth
+@else 
+@endauth--}}
 @endsection

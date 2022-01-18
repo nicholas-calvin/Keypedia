@@ -15,14 +15,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+//ALL USER
+Route::redirect('/', '/home')->name('home');
+Route::get('/home', function () {
     return view('/home');
-})->name('home');
+});
 
-Route::get('/login', [LoginController::class, 'login'])->name('login');
+//GUEST ONLY
+Route::middleware('guest')->group(function(){
+    Route::get('/login', [LoginController::class, 'login'])->name('login');
+    Route::post('/login', [LoginController::class, 'authenticate']);
+    
+    Route::get('/register', [RegisterController::class, 'register'])->name('register');
+    Route::post('/register', [RegisterController::class, 'store']);
+});
 
-Route::get('/register', [RegisterController::class, 'register'])->name('register');
-Route::post('/register', [RegisterController::class, 'store']);
+Route::middleware('auth')->group(function(){
+    //LOGGED IN ONLY
+    Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+    
+});
+
 
 Route::get('/keyboardPage', function(){
     return view('/KeyboardPage');

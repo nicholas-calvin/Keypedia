@@ -50,4 +50,8 @@ class User extends Authenticatable
     public function setBirthDateAttribute($value){
         $this->attributes['dob'] = Carbon::createFromFormat('m/d/Y, $value')->format('Y-m-d');
     }
+
+    public function role(){
+        return $this->belongsTo(Role::class);
+    }
 }
