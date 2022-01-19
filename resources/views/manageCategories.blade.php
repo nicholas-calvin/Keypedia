@@ -17,12 +17,12 @@
                      <label for="namaKeyboard" class="text-center">{{$category->name}}</label>
                     </div>
                     <div class="d-flex justify-content-around" style="margin-top: 1em">
-                        <form action="" method="post">
+                        <form action="/deleteCategory" method="post">
                             @csrf
                             <button type="submit" class="btn btn-primary">Delete Categories</button>
                         </form>
                         <a href="{{route('updateCategoryPage', ['categoryId'=>$category->id])}}">
-                            <button type="submit" class="btn btn-primary">Update Categories</button>
+                            <button class="btn btn-primary">Update Categories</button>
                         </a>
                     </div>
                 </div>

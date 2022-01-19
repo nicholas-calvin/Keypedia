@@ -63,4 +63,18 @@ class CategoryController extends Controller
         $showCategory = Category::all();
         return view('manageCategories', ['categories' => $showCategory]);
     }
+
+    public function deleteProduct(Request $request){
+        $selected = Category::find($request->id);
+
+        if($selected == null)
+            return back(404);
+
+        if(File::exists($selected->imgPath)) {
+            File::delete($selected->imgPath);
+        }
+        $selected->delete();
+
+        return redirect('/home')->with('success', 'Item successfully deleted.');
+    }
 }

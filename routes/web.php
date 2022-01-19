@@ -50,6 +50,7 @@ Route::middleware('auth')->group(function(){
         Route::get('/manageCategories', [CategoryController::class, 'manageCategoriesPage'])->name('manageCategories');
         Route::get('/category/update/{categoryId}', [CategoryController::class, 'showUpdateCategoryPage'])->name('updateCategoryPage');
         Route::put('/category/updateCategory/{categoryId}', [CategoryController::class, 'updateCategory']);
+        Route::post('/category/deleteCategory/{categoryId}', [CategoryController::class, 'deleteCategory']);
     });
     
 });
