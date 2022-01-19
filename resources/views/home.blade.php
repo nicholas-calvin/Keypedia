@@ -9,9 +9,7 @@
     </div>
     <div class="d-flex justify-content-around container" style="padding: 2em 0 2em 0;" >
         <div class="row">
-            {{-- @foreach ($keyboards as $keyboard) --}}
-            @foreach ($categories as $category)
-                
+            @foreach ($categories as $category) 
             <div class="col-md-3" style="margin-right: 7em; margin-bottom: 2em">
                 <div class="card mb-3" style="background-color: #baafd1; width: 400px; height: 500px;">
                     <a href="{{route('category', ['categoryId'=>$category->id])}}" style="text-decoration: none;">

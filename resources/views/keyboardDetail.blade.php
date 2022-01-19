@@ -1,6 +1,5 @@
 @extends('navbar')
 @section('content')
-
 <div class="container" style="padding: 2em; padding-top: 3em; width: 1200px; height: 830px;">
     <div class="" style="background-color: #b4a8cb;">
     
@@ -47,25 +46,23 @@
                         <h2>{{$keyboard->name}}</h2>
                     </div>
                     <div class="price mb-2">
-                        Rp. {{$keyboard->price}}
+                        $ {{$keyboard->price}}
                     </div>
                     <div class="desc mb-2">
                         {{$keyboard->description}}
                     </div>
                     <div>
+                        <label for="Quantity" style="margin-right: 2em; margin-left: 105px">Quantity : </label>
+                        <input type="number" name="" id="" style="border: none; border-radius: 5px; height: 40px;">
                         <form action="" method="post" class="d-flex justify-content-center align-items-center">
-                            <label for="Quantity" style="margin-right: 2em">Quantity : </label>
-                            <input type="number" name="" id="" style="border: none; border-radius: 5px; height: 40px;">
+                            @csrf
+                            <button class="btn btn-primary" style="margin-top: 1em">Add to cart</button>
                         </form>
-                        <button class="btn btn-primary" style="margin-left: 215px; margin-top: 1em">Add to cart</button>
                     </div>
                 </div>
             </div>
             @endforeach
         @endif
-
-
-        
     </div>
 </div>
 @endsection

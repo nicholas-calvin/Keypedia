@@ -40,7 +40,7 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="{{route('addKeyboard')}}">Add Keyboard</a></li>
-                                <li><a class="dropdown-item" href="#">Manage Categories</a></li>
+                                <li><a class="dropdown-item" href="{{route('manageCategories')}}">Manage Categories</a></li>
                                 <li><a class="dropdown-item" href="#">Change Password</a></li>
                                 <form action="{{route('logout')}}" method="post">
                                     @csrf
@@ -69,7 +69,7 @@
                                 {{Auth()->user()->username}}
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">My Cart</a></li>
+                                <li><a class="dropdown-item" href="{{route('cart')}}">My Cart</a></li>
                                 <li><a class="dropdown-item" href="#">Transaction History</a></li>
                                 <li><a class="dropdown-item" href="#">Change Password</a></li>
                                 <form action="{{route('logout')}}" method="post">

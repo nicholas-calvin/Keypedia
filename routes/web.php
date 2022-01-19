@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KeyboardController;
@@ -38,11 +39,15 @@ Route::middleware('auth')->group(function(){
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
     
     Route::middleware('customer')->group(function(){
+        Route::get('/cart', [CartController::class, 'showMyCart'])->name('cart');
     });
     
     Route::middleware('admin')->group(function(){
         Route::get('/addKeyboard', [KeyboardController::class, 'showAddKeyboardPage'])->name('addKeyboard');
         Route::post('/addKeyboard', [KeyboardController::class, 'addKeyboard']);
+        Route::get('/manageCategories', [CategoryController::class, 'manageCategoriesPage'])->name('manageCategories');
+        Route::get('/category/update/{categoryId}', [CategoryController::class, 'showUpdateCategoryPage'])->name('updateCategoryPage');
+        Route::put('/category/updateCategory/{categoryId}', [CategoryController::class, 'updateCategory']);
     });
     
 });

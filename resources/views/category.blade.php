@@ -23,7 +23,7 @@
                                 </div>
                                 <div class="product-detail-card">
                                     <strong class="mb-1">{{$keyboards->name}}</strong>
-                                    <p class="m-0">Rp. {{$keyboards->price}}</p>
+                                    <p class="m-0">$ {{$keyboards->price}}</p>
                                 </div>
                             </div>
                         </a>
