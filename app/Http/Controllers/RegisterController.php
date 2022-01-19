@@ -17,7 +17,7 @@ class RegisterController extends Controller
     public function store(Request $request){
         $validate = Validator::make($request->all(), [
             'username' => 'required|min:5',
-            'email' => 'required|email:dns',
+            'email' => 'required|email:dns|unique',
             'password' => 'required|confirmed|min:8',
             'password_confirmation' => 'required',
             'address' => 'required|min:10',

@@ -85,12 +85,12 @@ class KeyboardsSeeder extends Seeder
                 6. Working current: 100mA
                 7. Size: Value version: 450x170x25mm'
             ],
-            //MECHANICAL
+            //60% MECHANICAL
             [
                 'category_id' => '3',
                 'name' => 'Vortex Series VX5 PRO blue switch',
                 'price' => '415',
-                'imgPath' => 'assets/image/mechanical/mechanical keyboard1.jpg',
+                'imgPath' => 'assets/image/60% mechanical/60% mechanical keyboard1.jpg',
                 'description' => 'Features :
                 - ABS Material
                 - Layout 61%
@@ -104,9 +104,76 @@ class KeyboardsSeeder extends Seeder
             ],
             [
                 'category_id' => '3',
+                'name' => 'Razer Huntsman Mini Mercury White',
+                'price' => '1000',
+                'imgPath' => 'assets/image/60% mechanical/60% mechanical keyboard2.jpg',
+                'description' => 'Features :
+                - The #1 Best-Selling Gaming Peripherals Manufacturer in the US: Source - The NPD Group, Inc., U.S. Retail Tracking Service, Gaming Designed: Keyboards, Mice, PC Headsets, and PC Microphones, Based on dollar sales, Jan. 2017- June 2020 combined
+                - Faster Than Legacy Mechanical Switches: Razer Optical switches use light-based actuation, registering key presses at the speed of light (30% shorter actuation distance than other clicky switches at 1.5 mm) with satisfying, clicky feedback
+                - Ultimate Personalization & Gaming Immersion with Razer Chroma: Fully syncs with popular games, Razer hardware, Philips Hue, and gear from 30+ partners; supports 16.8 million colors on individually backlit keys
+                - Quality, Aluminum Construction: Covered with a matte, aluminum top frame for increased structural integrity
+                - Oil-Resistant Doubleshot PBT Keycaps: Made of textured, high-grade PBT for a more durable and textured finish less prone to long-term grime buildup
+                - Fully Programmable Macros: Razer Hypershift allows for all keys and keypress combinations to be remapped to execute complex commands'
+            ],
+            [
+                'category_id' => '3',
+                'name' => 'Digital Alliance Meca 6 RGB 61% Mechanical Keyboard',
+                'price' => '340',
+                'imgPath' => 'assets/image/60% mechanical/60% mechanical keyboard3.jpg',
+                'description' => 'SWITCH
+                - Switch Typel: Mechanical
+                - Switch Name: Outemu
+                - Switch Color: Blue, Red, Black
+                - Special Features: Removable Switch
+                - Lifespan: 60 Million Clicks Lifetime
+                
+                KEYBOARD
+                - Model: Meca 6
+                - Type: 61% Layout Size Mechanical
+                - Material: ABS + Metal
+                - Weight: 525 gr
+                - Dimension (L x W x H): 291 x 112 x 37 mm
+                - Interface: Detachable Type-C Cable
+                - Keycaps: Double Injection
+                - Cable Length: 160 cm
+                - Backlight: Rainbow 5 Color
+                - LED Mode: 14 LED Mode'
+            ],
+            //Full size mechanical
+            [
+                'category_id' => '4',
+                'name' => 'Tecware Phantom 104 keys',
+                'price' => '600',
+                'imgPath' => 'assets/image/full size mechanical/full size mechanical keyboard1.jpg',
+                'description' => 'Spesification:
+
+                    Dimensions : 444.5 x 133.5 x 22.3 mm
+                    Weight : 1.14kg
+                    Layout : 104 Keys
+                    Rated Voltage : 5.0V / 300mA
+                    Switch Lifespan : 50 million keystrokes
+                    Cable Length : 1.8m Braided USB cable
+                    Frame : Black Plastic Body / Gunmetal Alloy Backplate
+                    Switch Type : Mechanical Outemu Switches
+                    Circuit Board : FR-4 Fibreglass PCB
+                    LEDs : SMD LEDs
+                    Keycaps : Double-shot ABS Keycaps
+                    Interface : USB
+                    Colorize : 18 Lighting Modes and Custom Lighting Profile
+                    Package Contents :
+                    01 x Phantom Keyboard
+                    04 x Spare Mechanical Switch
+                    01 x Switch Puller
+                    01 x Keycap Puller
+                    01 x Manual
+                    
+                    Garansi Resmi 1 Tahun'
+            ],
+            [
+                'category_id' => '4',
                 'name' => 'Fantech MAXPOWER MK853 blue switch',
                 'price' => '459',
-                'imgPath' => 'assets/image/mechanical/mechanical keyboard2.jpg',
+                'imgPath' => 'assets/image/full size mechanical/full size mechanical keyboard2.jpg',
                 'description' => 'SHORTCUT VOLUME KNOB
                 Atur Volume, play dan pause dalam satu tombol
                 
@@ -135,29 +202,20 @@ class KeyboardsSeeder extends Seeder
                 '
             ],
             [
-                'category_id' => '3',
-                'name' => 'Digital Alliance Meca 6 RGB 61% Mechanical Keyboard',
-                'price' => '340',
-                'imgPath' => 'assets/image/mechanical/mechanical keyboard3.jpg',
-                'description' => 'SWITCH
-                - Switch Typel: Mechanical
-                - Switch Name: Outemu
-                - Switch Color: Blue, Red, Black
-                - Special Features: Removable Switch
-                - Lifespan: 60 Million Clicks Lifetime
+                'category_id' => '4',
+                'name' => 'Redragon Mechanical Keyboard Rainbow Full size K608',
+                'price' => '427',
+                'imgPath' => 'assets/image/full size mechanical/full size mechanical keyboard3.jpg',
+                'description' => 'Redragon Red/Blue/Brown Switch: Equipped with the classic mechanical red switch, ideal for intensive gaming. It offers linear and smooth straight up and down travel, no-bump consistent keystroke with a quiet noise. Equipped with the classic mechanical brown switch, suitable for both gaming and working. It offers soft tactile feedback with a small bump on each keystroke with moderate noise. Equipped with the classic mechanical blue switch, suitable for long-time typing use. It offers the typical tactile feature of mechanical switches, along with audible clicky feedback sound.
+
+                Decent Rainbow Backlight: With 9 vibrant rainbow backlight modes + 8 preset gaming lighting ways, different vibes for your daily working/gaming use. 2 customizable backlit modes ready for dedicated use.
                 
-                KEYBOARD
-                - Model: Meca 6
-                - Type: 61% Layout Size Mechanical
-                - Material: ABS + Metal
-                - Weight: 525 gr
-                - Dimension (L x W x H): 291 x 112 x 37 mm
-                - Interface: Detachable Type-C Cable
-                - Keycaps: Double Injection
-                - Cable Length: 160 cm
-                - Backlight: Rainbow 5 Color
-                - LED Mode: 14 LED Mode'
-            ]
+                100% Anti-ghosting: NKRO 104 keys ensure the most accurate simultaneous key actuation while any gameplay. No matter how fast your gaming move is, the damage will precisely strike on your target.
+                
+                Smooth Brushed Plate: All 104 keys are stably fixed in the brushed surface board, solid material build without losing the modern minimalist style. Adjustable stand supports for different board angles.
+                
+                Neat Floated Design: Full keys in floated layout form makes the keyboard spacing both look and feel natural and ample. And the better point is that you no longer have to worry about dust-build, easy to handle it with a hairdryer.'
+            ],
         ]);
     }
 }
