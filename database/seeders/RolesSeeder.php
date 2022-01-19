@@ -17,7 +17,7 @@ class RolesSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         DB::table('roles')->insert([
             [
-                'name' => 'Admin'
+                'name' => 'Manager'
             ],
             [
                 'name' => 'Customer'

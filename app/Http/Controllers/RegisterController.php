@@ -43,6 +43,6 @@ class RegisterController extends Controller
 
         $new_user->save();
 
-        return redirect('/login')->with('success', 'User registered successfully');
+        return redirect('/login');
     }
 }

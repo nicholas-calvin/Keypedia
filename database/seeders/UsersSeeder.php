@@ -15,13 +15,13 @@ class UsersSeeder extends Seeder
      */
     public function run()
     {
-        $password = Hash::make('admin');
+        $password = Hash::make('manager');
         DB::table('users')->insert([
-            'username' => 'Admin',
-            'email' => 'admin@admin.com',
+            'username' => 'Manager',
+            'email' => 'manager@manager.com',
             'password' => $password,
-            'address' => 'admin',
-            'gender' => 'admin',
+            'address' => 'manager',
+            'gender' => 'manager',
             'dob' => '2000-01-01',
             'role_id' => '1'
         ]);

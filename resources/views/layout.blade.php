@@ -32,12 +32,13 @@
         </div>
     </nav>
 
-    <div style="background-color: #4daabe; height: calc(100vh - 56px);">
+    <div style="background-color: #4daabe;height: 830px;">
         @yield('content')
-        <div class="p-3 bg-light text-white position-absolute bottom-0 start-50 translate-middle" style="width: 100vw; margin-bottom: -20px;">
-            <h6 class="d-flex justify-content-center" style="color: #6e6e6e; margin-top: -15px;">Made by Keypedia CEO-ES - 2021</h6>
-        </div>
     </div>
+
+    <footer class="footer mt-auto py-2 text-center" style="color: #6e6e6e;">
+        Made by Keypedia CEO-ES - 2021
+    </footer>
     
 
 </body>

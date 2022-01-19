@@ -20,17 +20,16 @@
             </div>
             <div class="d-flex">
                 @if (Auth()->user())
-                    @if (Auth()->user()->role_id === Helper::getAdminRoleId()) {{--Buat Admin--}}
+                    @if (Auth()->user()->role_id === Helper::getManagerRoleId()) {{--Buat Admin--}}
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-body" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Categories
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                @foreach ($categories as $category)
+                                <li><a class="dropdown-item" href="{{route('category', ['categoryId'=>$category->id])}}">{{$category->name}}</a></li>
+                                @endforeach
                             </ul>
                         </li>
                     </ul>
@@ -40,18 +39,18 @@
                                 MANAGER
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="{{route('addKeyboard')}}">Add Keyboard</a></li>
+                                <li><a class="dropdown-item" href="#">Manage Categories</a></li>
+                                <li><a class="dropdown-item" href="#">Change Password</a></li>
                                 <form action="{{route('logout')}}" method="post">
                                     @csrf
-                                    <li><button type="submit" class="dropdown-item fw-bold">Logout</button></li>
+                                    <li><button type="submit" class="dropdown-item">Logout</button></li>
                                 </form>
                             </ul>
                         </li>
                     </ul>
                     @endif
-                    @if(Auth()->user()->role_id === Helper::getCustomerRoleId())
+                    @if(Auth()->user()->role_id === Helper::getCustomerRoleId()) {{--Buat Customer--}}
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-body" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -59,13 +58,8 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 @foreach ($categories as $category)
-                                <li><a class="dropdown-item" href="#">{{$category->name}}</a></li>
+                                <li><a class="dropdown-item" href="{{route('category',['categoryId'=>$category->id])}}">{{$category->name}}</a></li>
                                 @endforeach
-                                {{-- <li><a class="dropdown-item" href="#">Wired Keyboard</a></li>
-                                <li><a class="dropdown-item" href="#">Ergonomic Keyboard</a></li>
-                                <li><a class="dropdown-item" href="#">60 - 69 Mechanical Keyboard</a></li>
-                                <li><a class="dropdown-item" href="#">70 - 89 Mechanical Keyboard</a></li>
-                                <li><a class="dropdown-item" href="#">Full size Mechanical Keyboard</a></li> --}}
                             </ul>
                         </li>
                     </ul>
@@ -80,7 +74,7 @@
                                 <li><a class="dropdown-item" href="#">Change Password</a></li>
                                 <form action="{{route('logout')}}" method="post">
                                     @csrf
-                                    <li><button type="submit" class="dropdown-item fw-bold">Logout</button></li>
+                                    <li><button type="submit" class="dropdown-item">Logout</button></li>
                                 </form>
                             </ul>
                         </li>
@@ -95,7 +89,6 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="{{route('register')}}">Register</a>
                     </li>
-                    
                 </ul>
                 @endif
             </div>
@@ -103,12 +96,13 @@
         </div>
     </nav>
 
-    <div style="background-color: #4daabe; height: calc(100vh - 56px);">
+    <div style="background-color: #4daabe;">
         @yield('content')
-        <div class="p-3 mb-0 bg-light text-white position-absolute bottom-0 start-50 translate-middle-x" style="width: 100vw; margin-bottom: -8px;">
-            <h6 class="d-flex justify-content-center" style="color: #6e6e6e; margin-top: -15px;">Made by Keypedia CEO-ES - 2021</h6>
-        </div>
     </div>
+
+    <footer class="footer mt-auto py-2 text-center" style="color: #6e6e6e;">
+        Made by Keypedia CEO-ES - 2021
+    </footer>
 
     
 

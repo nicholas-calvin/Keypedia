@@ -17,10 +17,10 @@ class Admin
      */
     public function handle(Request $request, Closure $next)
     {
-        $admin_role_id = Role::firstWhere('name', '=', 'Admin')->id;
-        if(Auth()->user() && Auth()->user()->role_id != $admin_role_id)
+        $manager_role_id = Role::firstWhere('name', '=', 'Manager')->id;
+        if(Auth()->user() && Auth()->user()->role_id != $manager_role_id)
             return back();
-
+            
         return $next($request);
     }
 }

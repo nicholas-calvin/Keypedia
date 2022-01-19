@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Keyboard;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function showHome(){
-        // $productList = Product::all();
+        $keyboardList = Keyboard::all();
         $showCategory = Category::all();
-        return view('home', [ 'categories' => $showCategory]);
+        return view('home', ['keyboards' => $keyboardList, 'categories' => $showCategory]);
     }
 }

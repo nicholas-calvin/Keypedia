@@ -21,12 +21,6 @@
             </div>
 
             <div style="background-color: #baaed1; margin-left: 0; margin-right: 0; padding: 2em;">
-                {{-- <div class="kanan">
-                    <button>Manager</button>
-                </div>
-                <div class="kiri">
-                    <button>User</button>
-                </div> --}}
                 @if(session()->has('success'))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
                         {{session('success')}}
