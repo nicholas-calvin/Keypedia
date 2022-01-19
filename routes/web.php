@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KeyboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,6 +41,7 @@ Route::middleware('auth')->group(function(){
     
     Route::middleware('customer')->group(function(){
         Route::get('/cart', [CartController::class, 'showMyCart'])->name('cart');
+        Route::get('/transaction-history', [TransactionController::class, 'showTransactionHistoryPage'])->name('transactionHistoryPage');
     });
     
     Route::middleware('admin')->group(function(){

@@ -70,7 +70,7 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="{{route('cart')}}">My Cart</a></li>
-                                <li><a class="dropdown-item" href="#">Transaction History</a></li>
+                                <li><a class="dropdown-item" href="{{route('transactionHistoryPage')}}">Transaction History</a></li>
                                 <li><a class="dropdown-item" href="#">Change Password</a></li>
                                 <form action="{{route('logout')}}" method="post">
                                     @csrf
