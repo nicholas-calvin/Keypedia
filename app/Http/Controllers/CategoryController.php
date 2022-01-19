@@ -75,6 +75,6 @@ class CategoryController extends Controller
         }
         $selected->delete();
 
-        return redirect('/home')->with('success', 'Item successfully deleted.');
+        return redirect('manageCategories')->with('success', 'Item successfully deleted.');
     }
 }
