@@ -21,7 +21,7 @@ class KeyboardController extends Controller
 
     public function showAddKeyboardPage(){
         $showCategory = Category::all();
-        return view('addKeyboard', ['categories' => $showCategory]);
+        return view('keyboardAdd', ['categories' => $showCategory]);
     }
 
     public function addKeyboard(Request $request){
