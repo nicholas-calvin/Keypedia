@@ -1,6 +1,6 @@
 @extends('navbar')
 @section('content')
-<div class="container-md" style="padding: 2em;">
+<div class="container-md" style="padding: 2em; width: 1200px; height: 830px;">
     <div class="login-form" style="background-color: #b4a8cb;">
 
         <div style="border-bottom-style: solid; border-bottom-color: #afa3c4;">

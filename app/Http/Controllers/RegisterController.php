@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
@@ -44,5 +46,26 @@ class RegisterController extends Controller
         $new_user->save();
 
         return redirect('/login');
+    }
+
+    public function showChangePasswordPage(){
+        $category = Category::all();
+        return view('changePassword', ['categories' => $category]);
+    }
+
+    public function changePassword(Request $request){
+        $validate = Validator::make($request->all(), [
+            'currentPassword' => 'required|password',
+            'newPassword' => 'required|confirmed|min:8',
+            'newPassword_confirmation' => 'required'
+        ]);
+        if($validate->fails()){
+            return back()->withErrors($validate);
+        }
+        $user = Auth()->user();
+        // $user->password = $request->newPassword;
+        $user->password = Hash::make($request->newPassword);
+        $user->save();
+        return back()->with('success', 'Password Changed!');
     }
 }

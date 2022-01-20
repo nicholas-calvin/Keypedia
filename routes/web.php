@@ -38,6 +38,8 @@ Route::middleware('guest')->group(function(){
 Route::middleware('auth')->group(function(){
     //LOGGED IN ONLY
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+    Route::get('/changePassword', [RegisterController::class, 'showChangePasswordPage']);
+    Route::post('/changePassword', [RegisterController::class, 'changePassword']);
     
     Route::middleware('customer')->group(function(){
         Route::get('/cart', [CartController::class, 'showMyCart'])->name('cart');

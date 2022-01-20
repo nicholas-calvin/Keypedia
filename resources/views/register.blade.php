@@ -83,7 +83,7 @@
                     </div>
                     <div class="row justify-content-center" style="margin-bottom: 1em;">
                         <div class="col-4 text-end">
-                            <label for="confirmPassword">Gender</label>
+                            <label for="gender">Gender</label>
                         </div>
                         <div class="col-6">
                             <input class="form-check-input @error('gender') is-invalid @enderror" type="radio" name="gender" id="male" value="male" required value="{{old('gender')}}">
@@ -94,7 +94,7 @@
                     </div>
                     <div class="row justify-content-center" style="margin-bottom: 1em;">
                         <div class="col-4 text-end">
-                            <label for="confirmPassword">Date of Birth</label>
+                            <label for="dob">Date of Birth</label>
                         </div>
                         <div class="col-6">
                             <input type="date" class="form-control datepicker rounded-3 w-75 @error('dob') is-invalid @enderror" name="dob" id="dob"  required value="{{old('dob')}}">
