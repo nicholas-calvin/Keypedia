@@ -41,7 +41,7 @@
                                         <p class="m-0">$ {{$keyboards->price}}</p>
                                     </div>
                                     <div class="d-flex justify-content-around" style="margin-top: 3em">
-                                        <form action="/keyboard/update/{{$keyboards->id}}" method="post">
+                                        <form action="/keyboard/delete/{{$keyboards->id}}" method="post">
                                             @csrf
                                             <button type="submit" class="btn btn-primary">Delete Keyboard</button>
                                         </form>

@@ -45,8 +45,7 @@ class CategoryController extends Controller
     }
 
     public function updateCategory(Request $request){
-
-        dd($request->categoryName);
+        // dd($request->categoryName);
         $showCategory = Category::all();
         return view('manageCategories', ['categories' => $showCategory])->with('success', 'Item successfully deleted.');
     }

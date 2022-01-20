@@ -51,9 +51,15 @@ class KeyboardController extends Controller
         return redirect('/home')->with('success', 'Item successfully added.');
     }
 
+    public function showUpdateKeyboard($keyboard_id){
+        $showCategory = Category::all();
+        $keyboard = Keyboard::find($keyboard_id);
+        return view('updateKeyboard', ['categories' => $showCategory, 'keyboard' => $keyboard]);
+    }
+
     public function updateKeyboard(Request $request){
         $showCategory = Category::all();
-        return view('updateKeyboard', ['categories' => $showCategory]);
+        return redirect('/home');
     }
 
     public function deleteKeyboard($keyboard_id){
@@ -61,7 +67,7 @@ class KeyboardController extends Controller
         $delete = Keyboard::findOrFail($keyboard_id);
         $delete->delete();
 
-        return redirect('manageCategories')->with('success', 'Item successfully deleted.');
+        return back()->with('success', 'Item successfully deleted.');
     }
 
 }
