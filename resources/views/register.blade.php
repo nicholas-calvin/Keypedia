@@ -8,12 +8,6 @@
             </div>
 
             <div style="background-color: #baaed1; margin-left: 0; margin-right: 0; padding: 2em;">
-                <!-- <div class="kanan">
-                    <button>Manager</button>
-                </div>
-                <div class="kiri">
-                    <button>User</button>
-                </div> -->
                 <form action="/register" method="post">
                     @csrf
                     <div class="row justify-content-center" style="margin-bottom: 1em;">
