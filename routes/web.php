@@ -25,6 +25,7 @@ Route::redirect('/', '/home');
 Route::get('/home', [HomeController::class, 'showHome'])->name('home');
 Route::get('/keyboard/details/{keyboardId}', [KeyboardController::class, 'getKeyboardDetails'])->name('keyboardDetail');
 Route::get('/category/{categoryId}', [CategoryController::class, 'showKeyboardCategory'])->name('category');
+Route::get('/category', [CategoryController::class, 'showCategory'])->name('showCategorySearched');
 
 //GUEST ONLY
 Route::middleware('guest')->group(function(){

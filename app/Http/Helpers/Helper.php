@@ -14,11 +14,4 @@ class Helper {
         return $cust_id;
     }
 
-    // public static function isAddedToWishlist($id) {
-    //     $wl = Wishlist::where('product_id', '=', $id)->where('user_id', '=', Auth()->id())->get();
-    //     if(count($wl) <= 0) {
-    //         return false;
-    //     } 
-    //     return true;
-    // }
 }

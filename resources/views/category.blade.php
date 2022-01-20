@@ -6,8 +6,7 @@
     <div style="background-color: #b2e3dd;" class="d-flex justify-content-center">
         <h1>{{$categoryName}}</h1>
     </div>
-    <div class="d-flex mt-4">
-
+    <form class="d-flex mt-4" action="{{route('showCategorySearched')}}" method="get">
         <span class="d-flex align-items-center">
             <input type="search" placeholder="Search..." style="height: 2em;">
         </span>
@@ -24,21 +23,10 @@
             @enderror
         </span>
         <span class="d-flex align-items-center">
-            <a href="{{route('category')}}">
-                <button class="btn btn-primary" type="submit">Search</button>
-            </a>
+            <button class="btn btn-primary" type="submit">Search</button>
         </span>
-    </div>
-        {{-- <form class="d-flex mt-4" action="" method="get"> --}}
-        {{-- </form> --}}
+    </form>
     <div class="content d-flex mt-4">
-        <div class="category-list me-4" style="width: 500px; border-right: black 1px solid; padding-right: 2em;">
-            <ul class="list-category">
-                @foreach($categories as $category)
-                <li><a class="text-decoration-none"  style="color: black" href="{{route('category',['categoryId'=>$category->id])}}">{{$category->name}}</li>
-                @endforeach
-            </ul>
-        </div>
         <div class="category-content">
             <div class="row">
                 @foreach($keyboardCategories as $keyboards)
