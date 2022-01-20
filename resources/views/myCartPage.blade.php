@@ -9,7 +9,30 @@
         
         <div style="background-color: #baaed1; margin-left: 0; margin-right: 0; padding: 2em;" class="d-flex justify-content-around">
             @if (count($carts) > 0)
-                
+            @for ($i = 0; $i < $carts->count(); $i++)
+            <div class="card mb-3">
+                <div class="card-body d-flex">
+                    <div style="margin-right: 50px">
+                        <img src="{{asset($keyboards[$i]->imgPath)}}" alt="" class="img-shoppingcart-item" style="width: 380px;">
+                    </div>
+                    <div class="content-body d-flex justify-content-between">
+                        <div>
+                            <p class="fw-bold">{{ $keyboards[$i]->name }}</p>
+                            <p>Rp. {{ number_format($keyboards[$i]->price * $carts[$i]->quantity, 0) }}</p>
+                        </div>
+                        <div>
+                            <form action="/cart/delete/{{ $carts[$i]->id }}" method="post">
+                                @csrf
+                                @method('delete')
+                                <button type="submit" class="bg-danger" style="color: white; border-radius: 5px; border: none">Delete</button>
+                            </form>
+                            {{-- quantity --}}
+                            <p class="pt-3 text-center">x{{ $carts[$i]->quantity }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endfor
             @else
             <strong>Your cart is empty</strong>
             @endif
