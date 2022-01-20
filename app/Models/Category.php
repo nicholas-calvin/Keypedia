@@ -14,7 +14,7 @@ class Category extends Model
         return $this->belongsTo(Category::class);
     }
 
-    // public function keyboard(){
-    //     return $this->hasMany(Keyboard::class);
-    // }
+    public function keyboard(){
+        return $this->hasMany(Keyboard::class);
+    }
 }
