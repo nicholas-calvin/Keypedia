@@ -49,7 +49,7 @@ class CartController extends Controller
             $cart->user_id = Auth()->user()->role_id;
             $cart->keyboard_id = $request->keyboardId;
             $cart->quantity = $request->quantity;
-            if($request->quantity == 0){
+            if($request->quantity <= 0){
                 return back()->with('error', 'Quantity must not be empty');
             } 
             $cart->save();
@@ -64,7 +64,19 @@ class CartController extends Controller
         return redirect('/cart');
     }
 
-    public function deleteItem(){
-        
+    public function updateQuantityItem(Request $request){
+        $exists = Cart::firstWhere('keyboard_id', '=', $request->keyboardId);
+
+        if($request->quantity <= 0){
+            return back()->with('error', 'Quantity must not be empty');
+        }
+
+        $exists->update([
+            'quantity' => $request->quantity
+        ]);
+
+        session()->flash('success', 'Quantity is updated');
+
+        return redirect('/cart');
     }
 }

@@ -42,7 +42,7 @@ Route::middleware('auth')->group(function(){
     Route::middleware('customer')->group(function(){
         Route::get('/cart', [CartController::class, 'showMyCart'])->name('cart');
         Route::post('/cart/add/{keyboardId}', [CartController::class, 'addToCart'])->name('addToCart');
-        Route::post('/cart/delete/{cartId}', [CartController::class, 'deleteItem']);
+        Route::post('/cart/update/{keyboardId}', [CartController::class, 'updateQuantityItem'])->name('updateQuantityItem');
         Route::get('/transaction-history', [TransactionController::class, 'showTransactionHistoryPage'])->name('transactionHistoryPage');
     });
     
