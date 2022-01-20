@@ -66,12 +66,8 @@ class CategoryController extends Controller
 
     public function deleteCategory($category_id){
 
-        // DB::table('categories')
-        //                     ->join('keyboards', 'categories.id', '=', 'keyboards.category_id')
-        //                     ->where('categories.id', 'LIKE', $category_id)->delete();
         $delete = Category::findOrFail($category_id);
         $delete->delete();
-        // $selected->delete();
 
         return redirect('manageCategories')->with('success', 'Item successfully deleted.');
     }
