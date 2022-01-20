@@ -44,8 +44,7 @@
             @endif
 
             <div class="d-flex justify-content-center align-items-center mb-3" >
-                {{-- <p class="fw-bold pe-4 m-0">Total : $ {{$totalPrice }}</p> --}}
-                <a href="" class="btn btn-primary">Checkout</a>
+                <a href="{{route('transactionHistoryPage')}}" class="btn btn-primary">Checkout</a>
             </div>
 
         </div>
