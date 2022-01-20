@@ -33,32 +33,8 @@ class CategoryController extends Controller
         return view('updateCategory', ['categories' => $showCategory, 'category' => $category]);
     }
 
-    public function updateCategory($request){
-        // $validator = Validator::make($request->all(), [
-        //     'name' => 'required|unique:keyboards,name|min:5',
-        //     'category_id' => 'required',
-        //     'price' => 'required|min:0',
-        //     'description' => 'required|min:20',
-        //     'image' => 'required'
-        // ]);
+    public function updateCategory($category_id){
 
-        // if($validator->fails())
-        //     return back()->withErrors($validator);
-
-        // $product = new Keyboard();
-        // $product->name = $request->name;
-        // $product->category_id = $request->category_id;
-        // $product->price = $request->price;
-        // $product->description = $request->description;
-
-        // $file = $request->file('image');
-        // $fileName = uniqid().File::extension($file->getClientOriginalName());
-        // $relativePath = 'assets/img/'. date('Y') . '/' . date('m');
-        // $destinationPath = public_path().'/'.$relativePath;
-        // $file->move($destinationPath, $fileName);
-
-        // $product->imgPath = $relativePath.'/'.$fileName;
-        // $product->save();
 
         $showCategory = Category::all();
         return view('manageCategories', ['categories' => $showCategory]);
