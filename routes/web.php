@@ -24,8 +24,8 @@ use Illuminate\Support\Facades\Route;
 Route::redirect('/', '/home');
 Route::get('/home', [HomeController::class, 'showHome'])->name('home');
 Route::get('/keyboard/details/{keyboardId}', [KeyboardController::class, 'getKeyboardDetails'])->name('keyboardDetail');
-Route::get('/category/{categoryId}', [CategoryController::class, 'showKeyboardCategory'])->name('category');
-Route::get('/category', [CategoryController::class, 'showCategory'])->name('showCategorySearched');
+Route::get('/keyboard/{categoryId}', [CategoryController::class, 'showKeyboardCategory'])->name('category');
+Route::get('/keyboard', [CategoryController::class, 'showKeyboard'])->name('showCategorySearched');
 
 //GUEST ONLY
 Route::middleware('guest')->group(function(){
@@ -50,8 +50,10 @@ Route::middleware('auth')->group(function(){
     });
     
     Route::middleware('admin')->group(function(){
-        Route::get('/keyboard/add', [KeyboardController::class, 'showAddKeyboardPage']);
-        Route::post('/keyboard/add', [KeyboardController::class, 'addKeyboard']);
+        Route::get('/addKeyboard', [KeyboardController::class, 'showAddKeyboardPage'])->name('showKeyboard');
+        Route::post('/keyboard/add', [CategoryController::class, 'addKeyboard']);
+        Route::get('/keyboard/update/{keyboardId}', [KeyboardController::class, 'updateKeyboard']);
+        Route::post('/keyboard/update/{keyboardId}', [KeyboardController::class, 'deleteKeyboard']);
         Route::get('/manageCategories', [CategoryController::class, 'manageCategoriesPage'])->name('manageCategories');
         Route::get('/category/update/{categoryId}', [CategoryController::class, 'showUpdateCategoryPage'])->name('updateCategoryPage');
         Route::put('/category/updateCategory/{categoryId}', [CategoryController::class, 'updateCategory']);

@@ -31,7 +31,7 @@
             @endforeach
         @endif
         
-        @if (Auth()->user()->role_id === Helper::getCustomerRoleId()) {{--Buat Admin--}}
+        @if (Auth()->user()->role_id === Helper::getCustomerRoleId()) {{--Buat Customer--}}
             
         <div style="border-bottom-style: solid; border-bottom-color: #afa3c4;">
             <label style="padding: 1em;">Detail Keyboard</label>

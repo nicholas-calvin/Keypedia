@@ -39,7 +39,7 @@
                                 MANAGER
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="/keyboard/add">Add Keyboard</a></li>
+                                <li><a class="dropdown-item" href="{{route('showKeyboard')}}">Add Keyboard</a></li>
                                 <li><a class="dropdown-item" href="{{route('manageCategories')}}">Manage Categories</a></li>
                                 <li><a class="dropdown-item" href="/changePassword">Change Password</a></li>
                                 <form action="{{route('logout')}}" method="post">

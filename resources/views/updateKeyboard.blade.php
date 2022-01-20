@@ -3,7 +3,7 @@
 <div class="container" style="padding: 2em; padding-top: 3em; width: 1200px; height: 830px;">
     <div class="" style="background-color: #b4a8cb;">
 
-        <div style="border-bottom-style: solid; border-bottom-color: #afa3c4;">
+        {{-- <div style="border-bottom-style: solid; border-bottom-color: #afa3c4;">
             <label style="padding: 1em;">Update Category</label>
         </div>
         
@@ -28,7 +28,7 @@
                     </div>
                 </form>
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>
 @endsection
