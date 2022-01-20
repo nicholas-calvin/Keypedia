@@ -64,7 +64,6 @@
                             <input type="number" name="quantity" id="quantity" style="border: none; border-radius: 5px; height: 40px;">
                         <div class="d-flex justify-content-center align-items-center">
                             <button class="btn btn-primary" style="margin-top: 1em">Add to cart</button>
-                            {{-- <a href="{{route('addToCart', ['keyboardId'=>$keyboard->id])}}" class="btn btn-primary" style="margin-top: 1em">Add to cart</a> --}}
                         </div>
                         </form>
                     </div>
