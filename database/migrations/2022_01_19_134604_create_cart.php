@@ -17,7 +17,6 @@ class createCart extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('keyboard_id')->constrained('keyboards');
-            $table->string('imgPath');
             $table->integer('quantity');
             $table->timestamps();
         });

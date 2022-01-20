@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Helpers\Helper;
 use App\Models\Cart;
 use App\Models\Category;
 use App\Models\Keyboard;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class CartController extends Controller
@@ -33,38 +35,26 @@ class CartController extends Controller
     }
 
     public function addToCart(Request $request){
-        $pr = Keyboard::find($request->id);
-
-        if($pr == null)
-            return back();
-
-        if($pr->stock <= 0)
-            return back()->with('error', 'Stock Empty!');
 
         $validator = Validator::make($request->all(), [
             'quantity' => 'required'
         ]);
-
         if($validator->fails()){
-            return back()->withErrors($validator);
+            return back()->with('error', 'Quantity must not be empty');
         }
 
-        if($pr->stock - $request->quantity < 0)
-            return back()->with('error', 'Cannot exceed stock left');
-
-        $pr->stock -= $request->quantity;
-        $pr->save();
-
-        $exists = Cart::firstWhere('keyboard_id', '=', $request->id);
-
-        if($exists == null) {
+        $exists = Cart::firstWhere('keyboard_id', '=', $request->keyboardId);
+        if($exists == null){
             $cart = new Cart;
-            $cart->user_id = Auth()->id();
-            $cart->keyboard_id = $request->id;
+            $cart->user_id = Auth()->user()->role_id;
+            $cart->keyboard_id = $request->keyboardId;
             $cart->quantity = $request->quantity;
-            $cart->imgPath = $request->imgPath;
+            if($request->quantity == 0){
+                return back()->with('error', 'Quantity must not be empty');
+            } 
             $cart->save();
-        } else {
+        }
+        else{
             $exists->quantity += $request->quantity;
             $exists->save();
         }

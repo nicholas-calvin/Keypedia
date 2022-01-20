@@ -41,7 +41,7 @@ Route::middleware('auth')->group(function(){
     
     Route::middleware('customer')->group(function(){
         Route::get('/cart', [CartController::class, 'showMyCart'])->name('cart');
-        Route::post('/cart/add/{keyboardId}', [CartController::class, 'addToCart']);
+        Route::post('/cart/add/{keyboardId}', [CartController::class, 'addToCart'])->name('addToCart');
         Route::get('/transaction-history', [TransactionController::class, 'showTransactionHistoryPage'])->name('transactionHistoryPage');
     });
     

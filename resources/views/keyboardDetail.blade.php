@@ -35,6 +35,14 @@
             </div>
             
             @foreach ($keyboardDetail as $keyboard)
+            <div style="background-color: #baaed1;" class="d-flex justify-content-around">
+                @if(session()->has('error'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{session('error')}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @endif
+            </div>
             <div style="background-color: #baaed1; margin-left: 0; margin-right: 0; padding: 2em;" class="d-flex justify-content-around">
                 <div class="col-5 d-flex align-items-center">
                     <img src="{{asset($keyboard->imgPath)}}" alt="Could not load image" srcset="" style="width: 380px;">
@@ -50,11 +58,14 @@
                         {{$keyboard->description}}
                     </div>
                     <div>
-                        <label for="Quantity" style="margin-right: 2em; margin-left: 105px">Quantity : </label>
-                        <input type="number" name="" id="" style="border: none; border-radius: 5px; height: 40px;">
-                        <form action="/cart/add/{{$keyboard->id}}" method="post" class="d-flex justify-content-center align-items-center">
+                        <form action="{{route('addToCart', ['keyboardId'=>$keyboard->id])}}" method="post">
                             @csrf
+                            <label for="Quantity" style="margin-right: 2em; margin-left: 105px">Quantity : </label>
+                            <input type="number" name="quantity" id="quantity" style="border: none; border-radius: 5px; height: 40px;">
+                        <div class="d-flex justify-content-center align-items-center">
                             <button class="btn btn-primary" style="margin-top: 1em">Add to cart</button>
+                            {{-- <a href="{{route('addToCart', ['keyboardId'=>$keyboard->id])}}" class="btn btn-primary" style="margin-top: 1em">Add to cart</a> --}}
+                        </div>
                         </form>
                     </div>
                 </div>
