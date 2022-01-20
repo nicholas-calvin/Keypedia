@@ -8,6 +8,11 @@
         </div>
         
         <div style="background-color: #baaed1; margin-left: 0; margin-right: 0; padding: 2em;" class="d-flex justify-content-around">
+            @if (count($carts) > 0)
+                
+            @else
+            <strong>Your cart is empty</strong>
+            @endif
             {{-- <div class="col-5 d-flex align-items-center">
                 <img src="{{asset($category->imgPath)}}" alt="Could not load image" srcset="" style="width: 380px;">
             </div>

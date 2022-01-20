@@ -3,8 +3,7 @@
 <div class="container" style="padding: 2em; padding-top: 3em; width: 1200px; height: 830px;">
     <div class="" style="background-color: #b4a8cb;">
     
-        @if (Auth()->user())
-            @if (Auth()->user()->role_id === Helper::getManagerRoleId()) {{--Buat Admin--}}
+        @if (Auth()->user()->role_id === Helper::getManagerRoleId()) {{--Buat Admin--}}
             
             <div style="border-bottom-style: solid; border-bottom-color: #afa3c4;">
                 <label style="padding: 1em;">Detail Keyboard</label>
@@ -28,7 +27,6 @@
                 </div>
             </div>
             @endforeach
-            @endif
             
             @else
             
@@ -54,7 +52,7 @@
                     <div>
                         <label for="Quantity" style="margin-right: 2em; margin-left: 105px">Quantity : </label>
                         <input type="number" name="" id="" style="border: none; border-radius: 5px; height: 40px;">
-                        <form action="" method="post" class="d-flex justify-content-center align-items-center">
+                        <form action="/cart/add/{{$keyboard->id}}" method="post" class="d-flex justify-content-center align-items-center">
                             @csrf
                             <button class="btn btn-primary" style="margin-top: 1em">Add to cart</button>
                         </form>
