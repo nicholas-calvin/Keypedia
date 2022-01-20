@@ -16,10 +16,10 @@ class CategoryController extends Controller
         $showCategory = Category::all();
         $keyboardCategory = DB::table('categories')
                             ->join('keyboards', 'categories.id', '=', 'keyboards.category_id')
-                            ->where('categories.id', 'LIKE', $category_id)->get();
+                            ->where('categories.id', 'LIKE', $category_id)->simplePaginate(8);
         $categoryName = Category::find($category_id)->name;
 
-        return view('category', ['keyboardCategories' => $keyboardCategory, 'categories' => $showCategory, 'categoryName' => $categoryName]);
+        return view('category', ['keyboardCategories' => $keyboardCategory, 'categories' => $showCategory, 'categoryName' => $categoryName, 'category_id' => $category_id]);
     }
 
     public function manageCategoriesPage(){
