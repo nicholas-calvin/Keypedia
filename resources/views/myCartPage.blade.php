@@ -38,15 +38,13 @@
                     </div>
                 </div>
             </div>
+            <div class="d-flex justify-content-center align-items-center mb-3" >
+                <a href="{{route('transactionHistoryPage')}}" class="btn btn-primary">Checkout</a>
+            </div>
             @endfor
             @else
             <strong>Your cart is empty</strong>
             @endif
-
-            <div class="d-flex justify-content-center align-items-center mb-3" >
-                <a href="{{route('transactionHistoryPage')}}" class="btn btn-primary">Checkout</a>
-            </div>
-
         </div>
     </div>
 </div>
