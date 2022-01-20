@@ -48,7 +48,7 @@ Route::middleware('auth')->group(function(){
     
     Route::middleware('admin')->group(function(){
         Route::get('/keyboard/add', [KeyboardController::class, 'showAddKeyboardPage']);
-        Route::post('/addKeyboard', [KeyboardController::class, 'addKeyboard']);
+        Route::post('/keyboard/add', [KeyboardController::class, 'addKeyboard']);
         Route::get('/manageCategories', [CategoryController::class, 'manageCategoriesPage'])->name('manageCategories');
         Route::get('/category/update/{categoryId}', [CategoryController::class, 'showUpdateCategoryPage'])->name('updateCategoryPage');
         Route::put('/category/updateCategory/{categoryId}', [CategoryController::class, 'updateCategory']);
