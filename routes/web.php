@@ -56,11 +56,3 @@ Route::middleware('auth')->group(function(){
     });
     
 });
-
-// Route::get('/keyboardPage', function(){
-//     return view('/KeyboardPage');
-// })->name('keyboardPage');
-
-// Route::get('/updateKeyboard', function(){
-//     return view('/UpdateKeyboard');
-// })->name('updateKeyboard');
