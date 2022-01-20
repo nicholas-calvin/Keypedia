@@ -31,7 +31,7 @@
             <div class="row">
                 @foreach($keyboardCategories as $keyboards)
                 <div class="col-3">
-                    <div class="card mb-3 pb-4">
+                    <div class="card mb-3 pb-4" style="background-color: #baafd1">
                         <a href="{{route('keyboardDetail', ['keyboardId'=>$keyboards->id])}}" style="text-decoration: none; color: black; height: 330px;">
                             <div class="card-body">
                                 <div class="product-image-card d-flex justify-content-center mb-2">
