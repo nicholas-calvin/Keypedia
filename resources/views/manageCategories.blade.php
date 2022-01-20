@@ -17,7 +17,7 @@
                      <label for="namaKeyboard" class="text-center">{{$category->name}}</label>
                     </div>
                     <div class="d-flex justify-content-around" style="margin-top: 1em">
-                        <form action="/deleteCategory" method="post">
+                        <form action="/category/deleteCategory/{{$category->id}}" method="post">
                             @csrf
                             <button type="submit" class="btn btn-primary">Delete Categories</button>
                         </form>

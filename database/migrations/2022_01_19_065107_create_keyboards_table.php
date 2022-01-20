@@ -15,7 +15,7 @@ class CreateKeyboardsTable extends Migration
     {
         Schema::create('keyboards', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id')->constrained('categories');
+            $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
             $table->string('name');
             $table->string('price');
             $table->string('imgPath');

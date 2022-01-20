@@ -64,16 +64,14 @@ class CategoryController extends Controller
         return view('manageCategories', ['categories' => $showCategory]);
     }
 
-    public function deleteProduct(Request $request){
-        $selected = Category::find($request->id);
+    public function deleteCategory($category_id){
 
-        if($selected == null)
-            return back(404);
-
-        if(File::exists($selected->imgPath)) {
-            File::delete($selected->imgPath);
-        }
-        $selected->delete();
+        // DB::table('categories')
+        //                     ->join('keyboards', 'categories.id', '=', 'keyboards.category_id')
+        //                     ->where('categories.id', 'LIKE', $category_id)->delete();
+        $delete = Category::findOrFail($category_id);
+        $delete->delete();
+        // $selected->delete();
 
         return redirect('manageCategories')->with('success', 'Item successfully deleted.');
     }
