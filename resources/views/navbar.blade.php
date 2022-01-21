@@ -49,6 +49,9 @@
                             </ul>
                         </li>
                     </ul>
+                    <div class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <label class="d-flex align-items-center" style="margin-left: 0.5em">{{ date('D, d-M-Y') }}</label>
+                    </div>
                     @endif
                     @if(Auth()->user()->role_id === Helper::getCustomerRoleId()) {{--Buat Customer--}}
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -79,6 +82,9 @@
                             </ul>
                         </li>
                     </ul>
+                    <div class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <label class="d-flex align-items-center" style="margin-left: 0.5em">{{ date('D, d-M-Y') }}</label>
+                    </div>
                     @endif
                     
                 @else
@@ -108,13 +114,3 @@
 
 </body>
 </html>
-    <script type="text/javascript">
-        n =  new Date();
-        
-y = n.getFullYear();
-m = n.getMonth() + 1;
-d = n.getDate();
-options = {d:'long'};
-        day = new Intl.DateTimeFormat('en-US', options).format(n);
-document.getElementById("clock").innerHTML = day;
-    </script>
