@@ -6,6 +6,18 @@
 </div>
 <div class="d-flex justify-content-around container" style="padding: 2em 0 2em 0;" >
     <div class="row">
+        @if(session()->has('error'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{session('error')}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        @endif
+        @if(session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{session('success')}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        @endif
         @foreach ($categories as $category) 
         <div class="col-md-3" style="margin-right: 7em; margin-bottom: 2em">
             <div class="card mb-3" style="background-color: #baafd1; width: 400px; height: 460px;">

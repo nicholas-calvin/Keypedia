@@ -44,10 +44,14 @@ class CategoryController extends Controller
         return view('updateCategory', ['categories' => $showCategory, 'category' => $category]);
     }
 
-    public function updateCategory(Request $request){
-        // dd($request->categoryName);
+    public function updateCategory(Request $request, $category_id){
+        $selected = Category::find($category_id);
+        if($selected == null) return back()->with('error', 'Failed to update category');
+        $selected->name = $request->categoryName;
+        $selected->imgPath = $request->categoryImage;
+        $selected->save();
         $showCategory = Category::all();
-        return view('manageCategories', ['categories' => $showCategory])->with('success', 'Item successfully deleted.');
+        return view('manageCategories', ['categories' => $showCategory])->with('success', 'Item successfully updated.');
     }
 
     public function deleteCategory($category_id){

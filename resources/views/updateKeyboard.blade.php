@@ -6,7 +6,12 @@
         <div style="border-bottom-style: solid; border-bottom-color: #afa3c4;">
             <label style="padding: 1em;">Update Keyboard</label>
         </div>
-        
+        @if(session()->has('error'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{session('error')}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        @endif
         <div style="background-color: #baaed1; margin-left: 0; margin-right: 0; padding: 2em;" class="d-flex justify-content-around">
             <div class="col-5 d-flex align-items-center">
                 <img src="{{asset($keyboard->imgPath)}}" alt="Could not load image" srcset="" style="width: 380px;">

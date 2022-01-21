@@ -57,9 +57,16 @@ class KeyboardController extends Controller
         return view('updateKeyboard', ['categories' => $showCategory, 'keyboard' => $keyboard]);
     }
 
-    public function updateKeyboard(Request $request){
-        $showCategory = Category::all();
-        return redirect('/home');
+    public function updateKeyboard(Request $request, $keyboard_id){
+        $selected = Keyboard::find($keyboard_id);
+        if($selected == null) return back()->with('error', 'Failed to update keyboard');
+        $selected->category_id = $request->keyboardCategory;
+        $selected->name = $request->keyboardName;
+        $selected->price = $request->keyboardPrice;
+        $selected->description = $request->keyboardDescription;
+        $selected->imgPath = $request->keyboardImage;
+        $selected->save();
+        return redirect('/home')->with('success', 'Item successfully updated.');;
     }
 
     public function deleteKeyboard($keyboard_id){
